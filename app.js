@@ -10,6 +10,7 @@ var serverPort = (process.env.PORT  || 4443);
 var https = require('https');
 var http = require('http');
 var server;
+console.log(process.env.LOCAL);
 if (process.env.LOCAL) {
   server = https.createServer(options, app);
 } else {
@@ -21,7 +22,7 @@ var roomList = {};
 
 app.get('/', function(req, res){
   console.log('get /');
- // res.sendFile(__dirname + '/index.html');
+  res.sendFile(__dirname + '/index.html');
 });
 server.listen(serverPort, function(){
   console.log('server up and running at %s port22', serverPort);

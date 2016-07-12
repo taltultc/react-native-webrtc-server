@@ -24,7 +24,7 @@ app.get('/', function(req, res){
   res.sendFile(__dirname + '/index.html');
 });
 server.listen(serverPort, function(){
-  console.log('server up and running at %s port', serverPort);
+  console.log('server up and running at %s port22', serverPort);
   if (process.env.LOCAL) {
     open('https://localhost:' + serverPort)
   }

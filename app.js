@@ -26,6 +26,7 @@ app.get('/', function(req, res){
 });
 server.listen(serverPort, function(){
   console.log('server up and running at %s port22', serverPort);
+  console.log(process.env.LOCAL);
   if (process.env.LOCAL) {
     open('https://localhost:' + serverPort)
   }

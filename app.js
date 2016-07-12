@@ -10,7 +10,7 @@ var serverPort = (process.env.PORT  || 4443);
 var https = require('https');
 var http = require('http');
 var server;
-console.log(process.env.LOCAL);
+console.log("tttttt",process.env.LOCAL);
 if (process.env.LOCAL) {
   server = https.createServer(options, app);
 } else {

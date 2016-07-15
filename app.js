@@ -65,6 +65,12 @@ io.on('connection', function(socket){
     socket.room = name;
   });
 
+  socket.on('msg', function(data){
+    console.log('msg', data);
+    var to = io.sockets.connected[data.to];
+    to.emit('msg', data);
+  });
+
 
   socket.on('exchange', function(data){
     console.log('exchange', data);

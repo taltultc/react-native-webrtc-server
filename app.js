@@ -67,8 +67,10 @@ io.on('connection', function(socket){
 
   socket.on('msg', function(data){
     console.log('msg', data);
-    var to = io.sockets.connected[data.to];
-    to.emit('msg', data);
+    if(data && data.to){
+      var to = io.sockets.connected[data.to];
+      to.emit('msg', data);
+    }
   });
 
 

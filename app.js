@@ -76,6 +76,7 @@ io.on('connection', function(socket){
   });
   
   socket.on('isCorrectMsg', function(data){
+    console.log('isCorrectMsg', data);
     if(data && data.to){
       data.from = socket.id;
       var to = io.sockets.connected[data.to];

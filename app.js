@@ -74,7 +74,15 @@ io.on('connection', function(socket){
       to.emit('msg', data);
     }
   });
-
+  
+  socket.on('isCorrectMsg', function(data){
+    if(data && data.to){
+      data.from = socket.id;
+      var to = io.sockets.connected[data.to];
+      to.emit('isCorrectMsg', data);
+    }
+  });
+  
 
   socket.on('exchange', function(data){
     console.log('exchange', data);

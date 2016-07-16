@@ -63,6 +63,7 @@ io.on('connection', function(socket){
     callback(socketIds);
     socket.join(name);
     socket.room = name;
+    socket.emit('msg', { socketId: socket.id });
   });
 
   socket.on('msg', function(data){
